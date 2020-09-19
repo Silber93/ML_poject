@@ -41,6 +41,7 @@ for index, r in df_train.iterrows():
     prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top actor':r['top actor'],
                                                                      'top director':r['top director'],
                                                                      'budget scale':r['budget scale']})
+    print(r)
     print(f"index: {index}\t probability to success: {prob.values[1]}\t true label: {r['label']}")
 
 
