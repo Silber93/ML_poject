@@ -31,7 +31,7 @@ bnlearn.plot(DAG)
 print("stop plot")
 
 # Parameter learning on the user-defined DAG and input data
-DAG = bnlearn.parameter_learning.fit(DAG, df_train, methodtype='maximumlikelihood')
+DAG = bnlearn.parameter_learning.fit(DAG, df_train)
 
 # Print the learned CPDs
 bnlearn.print_CPD(DAG)
