@@ -1,7 +1,8 @@
 import pandas as pd
-from ast import literal_eval
 import bnlearn
 from sklearn.model_selection import train_test_split
+
+print("uri yallow is in this bitch !")
 
 df = pd.read_csv(r"movies_pgm.csv")
 
