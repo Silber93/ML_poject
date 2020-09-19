@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 print("uri yallow is in this bitch !")
 
 df = pd.read_csv(r"movies_pgm.csv")
-
+df = df[df['top actor'].notnull() & df['top director'].notnull()]
 df_final = df[['budget scale', 'top actor', 'top director', 'label']]
 df_train, df_test = train_test_split(df_final, test_size=0.2, random_state=0)
 
