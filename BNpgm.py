@@ -1,6 +1,6 @@
 import pandas as pd
 from ast import literal_eval
-#import bnlearn
+import bnlearn
 from sklearn.model_selection import train_test_split
 
 df = pd.read_csv(r"movies_pgm.csv")
