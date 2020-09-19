@@ -22,13 +22,13 @@ DAG = bnlearn.make_DAG(edges)
 # DAG is stored in adjacency matrix
 print(DAG['adjmat'])
 
-# No CPDs are in the DAG. Lets see what happens if we print it.
-bnlearn.print_CPD(DAG)
+# # No CPDs are in the DAG. Lets see what happens if we print it.
+# bnlearn.print_CPD(DAG)
 
-# Plot DAG. Note that it can be differently orientated if you re-make the plot.
-print("plotting")
-bnlearn.plot(DAG)
-print("stop plot")
+# # Plot DAG. Note that it can be differently orientated if you re-make the plot.
+# print("plotting")
+# bnlearn.plot(DAG)
+# print("stop plot")
 
 # Parameter learning on the user-defined DAG and input data
 DAG = bnlearn.parameter_learning.fit(DAG, df_train)
