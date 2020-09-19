@@ -25,7 +25,7 @@ bnlearn.print_CPD(DAG)
 
 # Plot DAG. Note that it can be differently orientated if you re-make the plot.
 print("plotting")
-# bnlearn.plot(DAG)
+bnlearn.plot(DAG)
 print("stop plot")
 
 # Parameter learning on the user-defined DAG and input data
