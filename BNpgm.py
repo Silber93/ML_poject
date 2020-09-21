@@ -13,8 +13,8 @@ df_train, df_test = train_test_split(df_final, test_size=0.2, random_state=0)
 
 edges = [('top actor', 'budget scale'),
          ('top director', 'budget scale'),
-         ('budget scale', 'label'),
-]
+         ('budget scale', 'label')
+         ]
 
 # Make the actual Bayesian DAG
 DAG = bnlearn.make_DAG(edges)
