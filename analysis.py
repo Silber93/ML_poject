@@ -64,11 +64,23 @@ bnlearn.print_CPD(DAG)
 
 
 # test set
-for index, r in df_train.iterrows():
+c = 0
+size = 0
+for index, r in df_test.iterrows():
     prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top director': r['top director'],
                                                                      'week_num': r['week_num'],
                                                                      'main genre': r['main genre'],
                                                                      'top actor': r['top actor'],})
-    print(r)
-    print(f"index: {index}\t probability to success: {prob.values[1]}\t true label: {r['label']}")
+    score = prob.values[1]
+    real_label = row['label']
+    if score > 0.6:
+        predict = 1
+    else:
+        predict = 0
+    if real_label == predict:
+        c += 1
+    size += 1
+    # print(r)
+    # print(f"index: {index}\t probability to success: {prob.values[1]}\t true label: {r['label']}")
 
+print(f"\n\n\naccuracy is:{c/size}")
