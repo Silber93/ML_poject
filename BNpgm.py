@@ -36,6 +36,7 @@ DAG = bnlearn.parameter_learning.fit(DAG, df_train)
 # Print the learned CPDs
 bnlearn.print_CPD(DAG)
 
+
 # test set
 for index, r in df_train.iterrows():
     # prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top actor':r['top actor'],
