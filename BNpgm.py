@@ -42,8 +42,7 @@ c = 0
 size = 0
 for index, r in df_test.iterrows():
     prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top actor':r['top actor'],
-                                                                     'top director':r['top director'],
-                                                                     'budget scale':r['budget scale']})
+                                                                     'top director':r['top director']})
     score = prob.values[1]
     real_label = r['label']
     if score > 0.6:

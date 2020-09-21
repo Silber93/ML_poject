@@ -67,12 +67,11 @@ bnlearn.print_CPD(DAG)
 c = 0
 size = 0
 for index, r in df_test.iterrows():
-    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'week_num': r['week_num'],
-                                                                     'top actor': r['top actor']})
+    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'pop scale': r['pop scale']})
 
     score = prob.values[1]
     real_label = r['label']
-    if score > 0.63:
+    if score > 0.6:
         predict = 1
     else:
         predict = 0
