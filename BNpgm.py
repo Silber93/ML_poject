@@ -41,6 +41,7 @@ bnlearn.print_CPD(DAG)
 c = 0
 size = 0
 for index, r in df_test.iterrows():
+    # casual reasoning
     prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top actor':r['top actor'],
                                                                      'top director':r['top director']})
     score = prob.values[1]

@@ -39,7 +39,7 @@ edges = [('top director', 'budget scale'),
          ('week_num', 'pop scale'),
          ('main genre', 'top actor'),
          ('top actor', 'pop scale'),
-         ('label', 'top actor'),
+         ('label', 'pop scale')
 ]
 
 # Make the actual Bayesian DAG
@@ -67,7 +67,9 @@ bnlearn.print_CPD(DAG)
 c = 0
 size = 0
 for index, r in df_test.iterrows():
-    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'pop scale': r['pop scale']})
+    # evidential reasoning
+    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top director': r['top director'],
+                                                                     'top actor': r['top actor']})
 
     score = prob.values[1]
     real_label = r['label']
