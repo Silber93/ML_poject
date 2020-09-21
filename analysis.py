@@ -72,7 +72,7 @@ for index, r in df_test.iterrows():
 
     score = prob.values[1]
     real_label = r['label']
-    if score > 0.61:
+    if score > 0.63:
         predict = 1
     else:
         predict = 0
