@@ -3,7 +3,7 @@ import bnlearn
 from ast import literal_eval
 from sklearn.model_selection import train_test_split
 
-df = pd.read_csv(r"C:\Users\ooori\Desktop\project\movies_pgm.csv")
+df = pd.read_csv(r"movies_pgm.csv")
 df = df[df['budget'] > 10000]
 df = df[df['top actor'].notnull() & df['top director'].notnull()]
 
