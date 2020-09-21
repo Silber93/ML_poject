@@ -71,5 +71,5 @@ for index, r in df_train.iterrows():
                                                                      'top actor': r['top actor'],
                                                                      'pop scale': r['pop scale']})
     print(r)
-    # print(f"index: {index}\t probability to success: {prob.values[1]}\t true label: {r['label']}")
+    print(f"index: {index}\t probability to success: {prob.values[1]}\t true label: {r['label']}")
 
