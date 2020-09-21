@@ -48,8 +48,8 @@ DAG = bnlearn.make_DAG(edges)
 # DAG is stored in adjacency matrix
 print(DAG['adjmat'])
 
-# # No CPDs are in the DAG. Lets see what happens if we print it.
-# bnlearn.print_CPD(DAG)
+# No CPDs are in the DAG. Lets see what happens if we print it.
+bnlearn.print_CPD(DAG)
 
 # # Plot DAG. Note that it can be differently orientated if you re-make the plot.
 # print("plotting")
@@ -68,8 +68,7 @@ for index, r in df_train.iterrows():
     prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top director': r['top director'],
                                                                      'week_num': r['week_num'],
                                                                      'main genre': r['main genre'],
-                                                                     'top actor': r['top actor'],
-                                                                     'pop scale': r['pop scale']})
+                                                                     'top actor': r['top actor'],})
     print(r)
     print(f"index: {index}\t probability to success: {prob.values[1]}\t true label: {r['label']}")
 
