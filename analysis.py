@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 
 df = pd.read_csv(r"movies_pgm.csv")
 df = df[df['budget'] > 10000]
-df = df[df['top actor'].notnull() & df['top director'].notnull()]
+# df = df[df['top actor'].notnull() & df['top director'].notnull()]
 
 df.loc[df['popularity'] <= 5, 'pop scale'] = 1
 df.loc[(df['popularity'] > 5)&(df['popularity'] <= 10), 'pop scale'] = 2
@@ -23,6 +23,9 @@ for index, r in df.iterrows():
         continue
     g = row[0]['name']
     df.loc[index, 'main genre'] = g
+
+df = df[df['top actor'].notnull() & df['top director'].notnull() & df['budget scale'].notnull()
+        & df['main genre'].notnull() & df['pop scale'].notnull()]
 
 df_final = df[['top director', 'budget scale', 'week_num', 'main genre', 'top actor', 'pop scale', 'label']]
 
