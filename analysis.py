@@ -72,7 +72,7 @@ for index, r in df_test.iterrows():
                                                                      'main genre': r['main genre'],
                                                                      'top actor': r['top actor'],})
     score = prob.values[1]
-    real_label = row['label']
+    real_label = r['label']
     if score > 0.6:
         predict = 1
     else:
