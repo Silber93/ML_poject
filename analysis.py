@@ -72,7 +72,8 @@ c = 0
 size = 0
 for index, r in df_test.iterrows():
     # evidential reasoning
-    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'week_num': r['week_num']})
+    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'main genre': r['main genre'],
+                                                                     'week_num': r['week_num']})
 
     score = prob.values[1]
     real_label = r['label']
