@@ -2,7 +2,6 @@ import pandas as pd
 import bnlearn
 from sklearn.model_selection import train_test_split
 
-print("uri yallow is in this bitch !")
 
 df = pd.read_csv(r"movies_pgm.csv")
 df = df[df['budget'] > 10000]
@@ -42,7 +41,7 @@ c = 0
 size = 0
 for index, r in df_test.iterrows():
     # casual reasoning
-    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top director': r['top director']})
+    prob = bnlearn.inference.fit(DAG, variables=['label'], evidence={'top actor': r['top actor']})
     score = prob.values[1]
     real_label = r['label']
     if score > 0.6:
