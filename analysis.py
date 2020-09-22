@@ -39,11 +39,12 @@ edges = [('top director', 'budget scale'),
          ('top director', 'week_num'),
          ('top director', 'main genre'),
          ('week_num', 'pop scale'),
+         ('budget scale', 'label'),
          ('main genre', 'top actor'),
          ('top actor', 'pop scale'),
          ('label', 'pop scale')
          ]
-# ('budget scale', 'label'),
+
 
 # Make the actual Bayesian DAG
 DAG = bnlearn.make_DAG(edges)
