@@ -28,9 +28,12 @@ df = df[df['top actor'].notnull() & df['top director'].notnull() & df['budget sc
         & df['main genre'].notnull() & df['pop scale'].notnull()]
 
 df_final = df[['top director', 'budget scale', 'week_num', 'main genre', 'top actor', 'pop scale', 'label']]
+print(f"all data size:\t{df_final.size}")
+print(f"all data num of successes:\t{df_final['label'].sum()}")
 
 df_train, df_test = train_test_split(df_final, test_size=0.2, random_state=0)
-
+print(f"train size: \t{df_train.size}")
+print(f"train num of succes\t{df_train['label'].sum()}")
 
 edges = [('top director', 'budget scale'),
          ('top director', 'week_num'),
